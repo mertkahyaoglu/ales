@@ -15,7 +15,7 @@ while (1) {
 }
 
 sub check {
-	`wget "http://sonuc.osym.gov.tr" --quiet --no-check-certificate -O SONUC`;
+	`wget "https://sonuc.osym.gov.tr/SonucSec.aspx" --quiet --no-check-certificate -O SONUC`;
 
 	open $sonuc, "SONUC" or die "Valla açamadım: $!";
 
@@ -26,5 +26,5 @@ sub check {
 			exit;
 		}
 	}
-	print "Hala açıklamamış. $interval saniye sonra bir daha gel!\n";
+	print "Hala açıklanmamış. $interval saniye sonra bir daha gel!\n";
 }
